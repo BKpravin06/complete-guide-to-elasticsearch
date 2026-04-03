@@ -1,4 +1,4 @@
-**X-Pack Security and Elasticsearch 6.8**
+## X-Pack Security and Elasticsearch 6.8
 X-Pack is a set of features that extend the Elastic Stack, that is Elasticsearch, Kibana, Logstash and Beats. This includes features like security, monitoring, machine learning, reporting, etc. In this article, we are mainly concerned with the security features of X-Pack.
 
 **Step 1 - Create a basic docker-compose.yml file for Elasticsearch and Kibana**
