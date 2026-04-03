@@ -1,7 +1,7 @@
 ## X-Pack Security and Elasticsearch 6.8
 X-Pack is a set of features that extend the Elastic Stack, that is Elasticsearch, Kibana, Logstash and Beats. This includes features like security, monitoring, machine learning, reporting, etc. In this article, we are mainly concerned with the security features of X-Pack.
 
-**Step 1 - Create a basic docker-compose.yml file for Elasticsearch and Kibana**
+##Step 1 - Create a basic docker-compose.yml file for Elasticsearch and Kibana**
 In this step we will create our docker-compose.yml file with two services, elasticsearch and kibana and map their respective ports to the host OS
 Let us first start with creating a directory for our project. Open your terminal and type the following
 
@@ -11,7 +11,7 @@ $ cd elasticsearch-kibana-setup
 $ touch docker-compose.yml
 
 Then open the newly created docker-compose.yml file and paste the following lines in it:
-**
+##
 version: '3'
 services:
   elasticsearch:
@@ -25,7 +25,7 @@ services:
     image: docker.elastic.co/kibana/kibana:6.8.0
     ports:
       - 5601:5601
-**
+##
 The official docker images for Elastic Stack can be found here
 
 As discussed in the beginning of this article, we will be using version 6.8 for this setup. If you visit the above link and click on Elasticsearch image 6.8 to expand, you'll see two images:
@@ -34,9 +34,9 @@ docker pull docker.elastic.co/elasticsearch/elasticsearch:6.8.0
 docker pull docker.elastic.co/elasticsearch/elasticsearch-oss:6.8.0
 
 docker-compose up
-If docker-compose showing command not found after hit the above command then refer the **Install Docker Compose** slide.
+If docker-compose showing command not found after hit the above command then refer the #Install Docker Compose# slide.
 
-Once the services are up and running, open your browser and open the url ** http://localhost:9200/ ** and you will see something like this:
+Once the services are up and running, open your browser and open the url # http://localhost:9200/ # and you will see something like this:
 
 {
   "name" : "pKPbPLz",
@@ -56,7 +56,7 @@ Once the services are up and running, open your browser and open the url ** http
   "tagline" : "You Know, for Search"
 }
 
-That's elasticsearch. Also, if you navigate to ** http://localhost:5601/ ** you should see the Kibana console.
+That's elasticsearch. Also, if you navigate to # http://localhost:5601/ # you should see the Kibana console.
 
 
 
