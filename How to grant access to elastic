@@ -1,0 +1,23 @@
+*How to grant access to elastic*   
+
+version: '3'
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.8.0
+    environment:
+      - xpack.security.enabled=true
+      - ELASTIC_PASSWORD=StrongPass123   # initial password for 'elastic' superuser
+    ports:
+      - "9200:9200"
+ 
+  kibana:
+    depends_on:
+      - elasticsearch
+    image: docker.elastic.co/kibana/kibana:6.8.0
+    environment:
+      SERVER_HOST: "0.0.0.0"
+      ELASTICSEARCH_HOSTS: "http://elasticsearch:9200"
+      ELASTICSEARCH_USERNAME: "elastic"
+      ELASTICSEARCH_PASSWORD: "StrongPass123"
+    ports:
+      - "192.168.168.128:5601:5601"   # bind Kibana only to this host IP
