@@ -1,0 +1,66 @@
+**X-Pack Security and Elasticsearch 6.8**
+X-Pack is a set of features that extend the Elastic Stack, that is Elasticsearch, Kibana, Logstash and Beats. This includes features like security, monitoring, machine learning, reporting, etc. In this article, we are mainly concerned with the security features of X-Pack.
+
+**Step 1 - Create a basic docker-compose.yml file for Elasticsearch and Kibana**
+In this step we will create our docker-compose.yml file with two services, elasticsearch and kibana and map their respective ports to the host OS
+Let us first start with creating a directory for our project. Open your terminal and type the following
+
+$ cd
+$ mkdir elasticsearch-kibana-setup
+$ cd elasticsearch-kibana-setup
+$ touch docker-compose.yml
+
+Then open the newly created docker-compose.yml file and paste the following lines in it:
+**
+version: '3'
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.8.0
+    ports:
+      - 9200:9200
+
+  kibana:
+    depends_on:
+      - elasticsearch  
+    image: docker.elastic.co/kibana/kibana:6.8.0
+    ports:
+      - 5601:5601
+**
+The official docker images for Elastic Stack can be found here
+
+As discussed in the beginning of this article, we will be using version 6.8 for this setup. If you visit the above link and click on Elasticsearch image 6.8 to expand, you'll see two images:
+
+docker pull docker.elastic.co/elasticsearch/elasticsearch:6.8.0   
+docker pull docker.elastic.co/elasticsearch/elasticsearch-oss:6.8.0
+
+docker-compose up
+If docker-compose showing command not found after hit the above command then refer the **Install Docker Compose** slide.
+
+Once the services are up and running, open your browser and open the url ** http://localhost:9200/ ** and you will see something like this:
+
+{
+  "name" : "pKPbPLz",
+  "cluster_name" : "docker-cluster",
+  "cluster_uuid" : "AjqbFZ0qRF-X0_TQZqWIZA",
+  "version" : {
+    "number" : "6.8.0",
+    "build_flavor" : "default",
+    "build_type" : "docker",
+    "build_hash" : "65b6179",
+    "build_date" : "2019-05-15T20:06:13.172855Z",
+    "build_snapshot" : false,
+    "lucene_version" : "7.7.0",
+    "minimum_wire_compatibility_version" : "5.6.0",
+    "minimum_index_compatibility_version" : "5.0.0"
+  },
+  "tagline" : "You Know, for Search"
+}
+
+That's elasticsearch. Also, if you navigate to ** http://localhost:5601/ ** you should see the Kibana console.
+
+
+
+
+for more details refert he below URL
+
+https://dev.to/mandeepm91/setting-up-elasticsearch-and-kibana-on-docker-with-x-pack-security-enabled-48dm
