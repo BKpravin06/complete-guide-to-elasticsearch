@@ -1,4 +1,4 @@
-*How to grant access to elastic*   
+__How to grant access to elastic__   
 
 version: '3'
 services:
