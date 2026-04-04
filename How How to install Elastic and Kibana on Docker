@@ -8,11 +8,24 @@ docker run -d --name elasticsearch \
   --net elastic \
   -p 9200:9200 \
   -e "discovery.type=single-node" \
+  -e "xpack.security.enabled=true" \
+  -e "ELASTIC_PASSWORD=changeme" \
   docker.elastic.co/elasticsearch/elasticsearch:8.12.0
+
+or 
+
+docker run -d --name elasticsearch \
+  --net elastic \
+  -p 9200:9200 \
+  -e "discovery.type=single-node" \
+  docker.elastic.co/elasticsearch/elasticsearch:8.12.0
+
+############################################################
 
 docker run -d --name kibana \
   --net elastic \
   -p 5601:5601 \
+  -e "ELASTICSEARCH_HOSTS=http://elasticsearch:9200" \
   docker.elastic.co/kibana/kibana:8.12.0
 
 once it installed, check the below command
@@ -34,5 +47,11 @@ After thet it will ask you for the **verification code** for that run the below 
 paste that code on the browser   
 
 ** docker exec -it kibana container-id bin/kibana-verification-code **
+
+It will ask you for the User Name and Passowrd, for that please run the below command for creating auto password
+
+** docker exec -it elasticsearch bin/elasticsearch-setup-passwords auto **
+
+User Name :- elastic
 
 bin/kibana-verification-code
