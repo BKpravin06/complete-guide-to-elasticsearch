@@ -5,7 +5,7 @@ __How to grant access to elastic__
 
 **basically defalut path is /root/elasticsearch-kibana-setup/**
 
-First take a backup of old docker-compose.yml file
+First take a backup of old **docker-compose.yml** file
 
 and edit old file and delete old data and paste below data and save it
 
