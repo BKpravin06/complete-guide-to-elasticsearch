@@ -13,7 +13,7 @@ GET /indexname/_search
    
 GET /_cluster/health
 
-If status showing Yellow then please run the below command to amke it Green
+If status showing in **Yellow** then please run the below command to make it **Green**
 
 
 PUT _all/_settings
