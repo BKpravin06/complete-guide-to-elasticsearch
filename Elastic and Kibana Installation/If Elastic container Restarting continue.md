@@ -21,14 +21,20 @@ docker logs <container_name>
 **Copy that respective file from docker conatiner to your home directory and check the error and correct that files**
 
 **In Elasticsearch, even a small mistake can stop startup:
+
 ❌ Duplicate keys (like your earlier issue)
+
 ❌ Invalid YAML formatting
+
 ❌ Wrong SSL paths / missing certs
+
 ❌ Permission issues on mounted files
+
 ❌ Port conflicts
+
 ❌ Wrong environment variables**
 
-**If you are unable to fix the error then please revert the old backup file with updated file and restart the container.
+**If you are unable to fix the error then please revert the old backup file with updated file and restart the container**
 
 docker cp /home/user-home-directory/elasticsearch.yml elasticseach/container-id:/usr/share/elasticsearch/config/elasticsearch.yml
 
