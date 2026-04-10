@@ -17,6 +17,7 @@ If status showing in **Yellow** then please run the below command to make it **G
 
 
 PUT _all/_settings
+
 {
   "number_of_replicas": 0
 }
