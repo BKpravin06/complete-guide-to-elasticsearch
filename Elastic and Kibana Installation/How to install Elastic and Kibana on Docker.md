@@ -54,3 +54,5 @@ It will ask you for the User Name and Passowrd, for that please run the below co
 
 User Name :- elastic
 
+
+<img width="1252" height="145" alt="image" src="https://github.com/user-attachments/assets/fca9abe9-7b3b-4024-9ea3-f9e522f4ada7" />
