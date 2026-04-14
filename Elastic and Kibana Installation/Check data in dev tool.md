@@ -3,10 +3,14 @@
 1. **User the below command to check your data**
    
 GET /indexname/_search
+
 {
+
   "query": {
-    "match_all": {}
-  }
+  
+      "match_all": {}
+     }
+  
 }
 
 3. **check the status of the docke-cluster status**
@@ -19,5 +23,7 @@ If status showing in **Yellow** then please run the below command to make it **G
 PUT _all/_settings
 
 {
+
   "number_of_replicas": 0
+  
 }
