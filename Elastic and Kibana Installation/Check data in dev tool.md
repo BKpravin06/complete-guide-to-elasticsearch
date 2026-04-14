@@ -27,3 +27,6 @@ PUT _all/_settings
   "number_of_replicas": 0
   
 }
+
+<img width="1480" height="633" alt="image" src="https://github.com/user-attachments/assets/6951be31-5035-4d26-a3f8-2de0eb3fdb89" />
+
