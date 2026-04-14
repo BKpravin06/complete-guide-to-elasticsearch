@@ -74,6 +74,11 @@ curl -k https://192.168.168.128:9200 or curl -k http://192.168.168.128:9200
 
 if anoything is work then make a changes accrodingly on the file **refer the point no. 2(Configure Metricbeat)**
 
+**I have made a changes in my metricbeat file accordingly**
+
+<img width="893" height="998" alt="image" src="https://github.com/user-attachments/assets/9dbb6160-c4a5-467e-a405-f43e23114395" />
+
+
 7. Check Elasticsearch Binding (IMPORTANT)
 
 **On Elasticsearch server:**
